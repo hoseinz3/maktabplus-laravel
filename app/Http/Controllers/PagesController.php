@@ -8,7 +8,13 @@ class PagesController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+
+        $names = [
+            ['firstName' => 'hosein' , 'lastName' => 'abedi'],
+            ['firstName' => 'mahdi' ,'lastName' => 'kazemi'],
+            ['firstName' => 'ali' , 'lastName' => 'mohammadi']
+        ];
+        return view('welcome', compact('names'));
     }
 
     public function aboutUs()
