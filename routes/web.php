@@ -16,24 +16,12 @@
 //    return view('welcome');
 //});
 
-
-use App\Product;
-
 Route::get('/', 'PagesController@index');
 
 Route::get('/about-us', 'PagesController@aboutUs');
 
-Route::get('/products', function () {
+Route::get('/products', 'ProductController@index');
 
-    $products = Product::all();
-    return view('products.index', compact('products'));
-});
-
-Route::get('/products/{id}', function ($id) {
-
-    $product = Product::find($id);
-    return view('products.show', compact('product'));
-
-});
+Route::get('/products/{id}', 'ProductController@show');
 
 
