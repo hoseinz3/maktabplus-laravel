@@ -17,20 +17,21 @@
 //});
 
 
+use App\Product;
+
 Route::get('/', 'PagesController@index');
 
 Route::get('/about-us', 'PagesController@aboutUs');
 
 Route::get('/products', function () {
-    $products = DB::table('products')
-        ->get();
+
+    $products = Product::all();
     return view('products.index', compact('products'));
 });
 
 Route::get('/products/{id}', function ($id) {
-    $product = DB::table('products')
-        ->find($id);
 
+    $product = Product::find($id);
     return view('products.show', compact('product'));
 
 });
