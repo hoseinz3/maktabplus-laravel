@@ -22,5 +22,14 @@ Route::get('/', 'PagesController@index');
 
 Route::get('/about-us','PagesController@aboutUs');
 
+Route::get('/products',function(){
+    $product = DB::table('products')
+    //    ->where('name', 'like', '%8%')
+    //    ->where('description', 'like', '%Phone%')
+        ->first()
+        ;
+    dd($product);
+});
+
 
 
