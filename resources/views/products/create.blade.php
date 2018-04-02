@@ -2,15 +2,15 @@
 
 @section('content')
     <div class="card mt-5">
-        <div class="body">
-            <h5 class="title">
+        <div class="card-body">
+            <h5 class="card-title">
                 Create Product
             </h5>
             <form method="POST" action="{{route('products.store')}}">
                 {{csrf_field()}}
                 <div class="form-group">
-                    <label for="email">Name</label>
-                    <input type="text" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter Name">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Enter Name">
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
